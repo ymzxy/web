@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游景点 - 三江侗族自治县</title>
+    <link rel="stylesheet" href="file:///C:/Users/27396/AppData/Roaming/HBuilder X/sanjiang/img/三江大侗寨景区.png">
+    <style>
+        /* 复用 index.html 的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5e6c8 0%, #d9c7a6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin: 0 0;
+            padding: 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #1E3A8A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        p{
+            text-indent: 2em; /* 首行缩进两个字符 */
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #9B2C2C;
+            font-style: italic;
+        }
+        
+       /* 侗族特色导航栏 */
+       .dong-navbar {
+           background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a" opacity="0.9"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%231E3A8A" stroke-width="1" fill="none"/><path d="M0,30 Q25,10 50,30 T100,30" stroke="%239B2C2C" stroke-width="1" fill="none"/></svg>');
+           background-size: cover;
+           border-radius: 10px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+           position: relative;
+           overflow: hidden;
+           margin: 20px auto;
+           border: 2px solid #D4AF37;
+           border-bottom: 5px solid #D4AF37;
+           max-width: 1200px;
+       }
+       
+       .nav-container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 0 30px;
+           height: 80px;
+       }
+       
+       .nav-links {
+           display: flex;
+           list-style: none;
+           margin: 0 auto;
+           padding: 0;
+       }
+        
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+        
+        .nav-links a {
+            color: #f5e6c8;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #D4AF37;
+            transform: translateY(-3px);
+        }
+        
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
+        
+        /* 侗族图案装饰 */
+        .nav-decoration {
+            position: absolute;
+            height: 40px;
+            width: 100%;
+            bottom: -5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><rect width="20" height="20" fill="%231E3A8A"/><rect x="40" width="20" height="20" fill="%231E3A8A"/><rect x="80" width="20" height="20" fill="%231E3A8A"/><circle cx="10" cy="10" r="8" fill="%239B2C2C"/><circle cx="50" cy="10" r="8" fill="%239B2C2C"/><circle cx="90" cy="10" r="8" fill="%239B2C2C"/><rect x="25" y="5" width="5" height="10" fill="%23D4AF37"/><rect x="65" y="5" width="5" height="10" fill="%23D4AF37"/></svg>') repeat-x;
+            background-size: contain;
+        }
+        
+        /* 内容展示区域 */
+        .content {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #D4AF37;
+            position: relative;
+        }
+        
+        .content::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40"><path d="M0,40 L30,0 L60,40 L90,0 L120,40 L150,0" stroke="%23D4AF37" stroke-width="3" fill="none"/></svg>') no-repeat;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #1E3A8A;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #9B2C2C;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "✻";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            background: linear-gradient(to bottom right, #f5e6c8, #e4d4b4);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature i {
+            font-size: 3rem;
+            color: #9B2C2C;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature p {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .dong-pattern {
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30"><rect width="100" height="30" fill="%23f5e6c8"/><path d="M10,15 Q25,5 40,15 T70,15" stroke="%239B2C2C" stroke-width="1" fill="none"/><circle cx="15" cy="15" r="3" fill="%231E3A8A"/><circle cx="85" cy="15" r="3" fill="%231E3A8A"/><rect x="45" y="10" width="10" height="10" fill="%23D4AF37" rx="2"/></svg>') repeat-x;
+            margin: 40px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #1E3A8A;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* 旅游景点卡片样式 */
+        .tour-recommendations {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .tour-card {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .tour-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .tour-card:hover .tour-card-inner {
+            transform: rotateX(-180deg); /* 修改为绕 X 轴旋转 */
+        }
+
+        .tour-card-front,
+        .tour-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+        }
+
+        .tour-card-front {
+            background-color: white;
+            display: flex;
+        }
+
+        .tour-card-back {
+            background-color: #1E3A8A;
+            color: white;
+            transform: rotateX(180deg); /* 修改为绕 X 轴旋转 */
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tour-card:nth-child(odd) .tour-card-front img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-card:nth-child(odd) .tour-card-front .tour-info {
+            width: 50%;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .tour-card:nth-child(even) .tour-card-front img {
+            order: 2;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-card:nth-child(even) .tour-card-front .tour-info {
+            order: 1;
+            width: 50%;
+            padding: 20px;
+            text-align: right;
+        }
+
+        .tour-info h3 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #D4AF37;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .rating span {
+            color: #666;
+            margin-left: 10px;
+        }
+
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+        }
+
+        .view-all {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* 3D立方体样式 */
+        .cube-container {
+            perspective: 1000px;
+            margin: 80px auto; /* 增大魔方和上方横线的距离 */
+            cursor: pointer;
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .front {
+            transform: translateZ(100px);
+        }
+
+        .back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+
+        .left {
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+
+        .right {
+            transform: translateX(100px) rotateY(90deg);
+        }
+
+        .top {
+            transform: translateY(-100px) rotateX(90deg);
+        }
+
+        .bottom {
+            transform: translateY(100px) rotateX(-90deg);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        /* 展开状态样式 */
+        .cube.expanded {
+            animation: none;
+            transform: translateZ(-100px);
+        }
+
+        .cube.expanded .front {
+            transform: translateZ(0) translateX(-200px) rotateY(0) scale(1);
+            transition-delay: 0s;
+        }
+
+        .cube.expanded .left {
+            transform: translateZ(0) translateX(-400px) rotateY(0) scale(1);
+            transition-delay: 0.2s;
+        }
+
+        .cube.expanded .right {
+            transform: translateZ(0) translateX(0) rotateY(0) scale(1);
+            transition-delay: 0.4s;
+        }
+
+        .cube.expanded .top {
+            transform: translateZ(0) translateX(200px) rotateY(0) scale(1);
+            transition-delay: 0.6s;
+        }
+
+        .cube.expanded .back {
+            transform: translateZ(0) translateX(400px) rotateY(0) scale(1);
+            transition-delay: 0.8s;
+        }
+
+        .cube.expanded .bottom {
+            transform: translateZ(0) translateY(0) rotateY(0) scale(0);
+            opacity: 0;
+            transition-delay: 0.6s;
+        }
+
+        /* 图片卡片样式 - 默认隐藏 */
+        .card-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        .card.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .card-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 了解旅游攻略按钮 */
+        .tour-guide-btn {
+            display: block;
+            margin: 40px auto 20px;
+            padding: 15px 30px;
+            background: transparent;
+            color: #1E3A8A;
+            border: 2px solid #1E3A8A;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            max-width: 300px;
+        }
+
+        .tour-guide-btn:hover {
+            background: linear-gradient(to right, #1E3A8A, #9B2C2C);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .tour-card {
+                height: 300px;
+            }
+            
+            .tour-card .tour-card-front {
+                flex-direction: column;
+            }
+            
+            .tour-card .tour-card-front img,
+            .tour-card .tour-card-front .tour-info {
+                width: 100%;
+                height: 50%;
+                order: 0;
+                text-align: left;
+            }
+            
+            .card {
+                max-width: 90%;
+            }
+            
+            .card-image {
+                height: 200px;
+            }
+            
+            .cube.expanded .front {
+                transform: translateZ(0) translateX(-100px) rotateY(0) scale(0.5);
+            }
+
+            .cube.expanded .back {
+                transform: translateZ(0) translateX(100px) rotateY(0) scale(0.5);
+            }
+
+            .cube.expanded .left {
+                transform: translateZ(0) translateX(-200px) rotateY(0) scale(0.5);
+            }
+
+            .cube.expanded .right {
+                transform: translateZ(0) translateX(0) rotateY(0) scale(0.5);
+            }
+
+            .cube.expanded .top {
+                transform: translateZ(0) translateX(200px) rotateY(0) scale(0.5);
+            }
+        }
+        .btn-outline {
+            background: transparent;
+            color: #1E3A8A;
+            border: 2px solid #1E3A8A;
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: linear-gradient(to right, #1E3A8A, #9B2C2C);
+            color: white;
+        }
+        /* 旅游攻略板块样式 */
+        #tour-guide {
+            display: none;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #D4AF37;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="dong-navbar">
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="scenic-spots.html"><i class="fas fa-mountain"></i> 旅游景点</a></li>
+                        <li><a href="dong-culture.html"><i class="fas fa-drum"></i> 侗族文化</a></li>
+                        <li><a href="homestays.html"><i class="fas fa-bed"></i> 特色民宿</a></li>
+                        <li><a href="food.html"><i class="fas fa-utensils"></i> 特色美食</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="nav-decoration"></div>
+            </nav>
+        </header>
+
+        <div class="content" id="current-section">
+            <h2 class="section-title">强烈推荐景点</h2>
+            <div class="tour-recommendations">
+                <div class="tour-card">
+                    <div class="tour-card-inner">
+                        <div class="tour-card-front">
+                            <img src="img/三江大侗寨景区1.png" alt="三江大侗寨景区‌">
+                            <div class="tour-info">
+                                <h3>三江大侗寨景区‌</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5 (1280评价)</span>
+                                </div>
+                                <p>三江大侗寨景区融合了侗族独特的建筑风格和丰富的文化内涵，是了解侗族文化的绝佳去处。让游客一站式体验"侗族建筑艺术巅峰、歌舞盛宴与舌尖风味"的文旅综合体。</p>
+                            </div>
+                        </div>
+                        <div class="tour-card-back">
+                            <p>路线：三江南站出站 → 乘坐 4路公交至县城“广场鸟巢（侗乡鸟巢）”站 
+                            → 换乘 “古宜-程阳八寨-林溪”专线公交（车头有线路标识）直达景区。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="tour-card-inner">
+                        <div class="tour-card-front">
+                            <img src="img/丹洲古镇‌.png" alt="丹洲古镇‌">
+                            <div class="tour-info">
+                                <h3>丹洲古镇‌</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8 (2350评价)</span>
+                                </div>
+                                <p>丹洲古镇有着悠久的历史和宁静的氛围，漫步其中，仿佛穿越回了古代。漂浮在融江上的千年诗意孤岛，被誉为"中国最美水上古城"。</p>
+                            </div>
+                        </div>
+                        <div class="tour-card-back">
+                            <p>路线：三江南站 → 三江10路公交（车头标注“河东车站—珠玉村（丹洲景区）”）
+                             → 终点站“珠玉村(丹洲景区)站”下车 → 步行13米至渡口乘船上岛。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="tour-card-inner">
+                        <div class="tour-card-front">
+                            <img src="img/程阳八寨.png" alt="程阳八寨">
+                            <div class="tour-info">
+                                <h3>程阳八寨</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9 (1870评价)</span>
+                                </div>
+                                <p>非遗手作聚集地，可深度体验蓝靛染布、侗布刺绣等传统工艺。程阳八寨是侗族传统文化的活化石，在这里可以亲手体验传统工艺的魅力。</p>
+                            </div>
+                        </div>
+                        <div class="tour-card-back">
+                            <p>路线：三江南站 → 乘坐4路公交车→ 在“广场鸟巢(思源小区)”站下车 → 步行约265米到达景区入口。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-separator">
+                <h2 class="section-title">更多景点等你解锁</h2>
+                <!-- 3D立方体容器 -->
+                <div class="cube-container" id="cubeContainer">
+                    <div class="cube" id="cube">
+                        <div class="cube-face front" style="background-image: url('img/11.jpg')">
+                            <span>风景 1</span>
+                        </div>
+                        <div class="cube-face back" style="background-image: url('img/17.jpg')">
+                            <span>风景 2</span>
+                        </div>
+                        <div class="cube-face left" style="background-image: url('img/13.png')">
+                            <span>风景 3</span>
+                        </div>
+                        <div class="cube-face right" style="background-image: url('img/14.png')">
+                            <span>风景 4</span>
+                        </div>
+                        <div class="cube-face top" style="background-image: url('img/16.png')">
+                            <span>风景 5</span>
+                        </div>
+                        <div class="cube-face bottom" style="background-image: url('img/15.png')">
+                            <span>风景 6</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 了解旅游攻略按钮 -->
+                <a href="#tour-guide" class="tour-guide-btn" id="tour-guide-btn">
+                    <i class="fas fa-map-signs"></i> 了解旅游攻略
+                </a>
+            </div>
+            <!-- 图片卡片 -->
+            <div class="card-overlay" id="cardOverlay">
+                <div class="close-btn" id="closeBtn">&times;</div>
+                <div class="card" id="card">
+                    <div class="card-image" id="cardImage"></div>
+                    <div class="card-content">
+                        <h2 class="card-title" id="cardTitle">风景标题</h2>
+                        <p class="card-description" id="cardDescription">风景描述内容将在这里显示...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 旅游攻略板块 -->
+        <div id="tour-guide">
+            <h2 class="section-title">旅游攻略</h2>
+            <p>一、核心景点推荐</p>
+<p>程阳八寨</p>
+<p>特色：中国首批非遗村落，由马安寨、平寨等八寨组成，拥有世界最大的侗族木楼群。清晨薄雾中的吊脚楼与梯田如水墨画，是摄影绝佳地。</p>
+<p>体验：
+拦门酒（每日10:00、15:00）：喝糯米酒入寨，感受侗族迎客礼。</p>
+<p>捶糍粑（20元）：亲手制作热乎糍粑，裹花生粉品尝。</p>
+<p>花炮节（农历二月初十）：观看侗族青年激烈争夺花炮，提前占摄影位15。</p>
+<p>门票：60元（学生半价）。</p>
+<p>三江鼓楼</p>
+<p>亮点：42.6米高的纯木结构，27层瓦檐象征27个侗族支系。登顶（30元）可俯瞰鼓楼群与风雨桥全景。</p>
+<p>活动：每周六20:00的“月也歌会”，跟随老歌师学唱多声部侗族大歌15。</p>
+<p>丹洲古镇</p>
+<p>玩法：乘渡船（15元）登明代江心岛，石板街两侧老宅藏有地道 柚子酿（38元/份，糯米肉馅蒸制）。</p>
+<p>贴士：3月柚子花开时，穿汉服在花海拍照，宛如江南。</p>
+<p>布央仙人山茶园</p>
+<p>体验：
+乘彩虹小火车（60元含茶饮），4月采茶季可参与制茶。</p>
+<p>夜宿星空木屋，用手机延时摄影拍银河（需三脚架）。</p>
+<p>购物：景区门口茶农直销点，100元买三罐当季绿茶，性价比高1。</p>
+<p>🎭 二、深度文化体验</p>
+<p>侗族手工艺</p>
+<p>冠洞侗寨：80元体验 蓝靛染布，非遗传承人指导制专属方巾；3月赏千年红豆杉开花。</p>
+<p>侗绣工坊：程阳八寨“清花绣坊”购买侗绣饰品，或租侗族服饰（50元/套）拍照。</p>
+<p>民俗活动</p>
+<p>《坐妹》实景演出：侗乡鸟巢每晚演绎侗族婚恋歌舞，融合浪漫故事与民族元素（票价约100元）。</p>
+<p>百家宴/长桌宴：程阳八寨鼓楼前，品簸箕宴、酸鱼酸肉，体验“高山流水”敬酒仪式。</p>
+<p>🍲 三、必尝美食清单</p>
+<p>美食	推荐店铺/地点	特色</p>
+<p>酸汤鱼	程阳八寨“马鞍寨火塘边”	稻田鲤鱼+米汤发酵酸汤，配野生蕨菜（68元/份）</p>
+<p>油茶	丹洲古城“老茶婆油茶铺”	茶叶+姜+花生煮沸，配米花炒黄豆（15元/碗）</p>
+<p>三江粽	程阳八寨“阿婆手工粽”	柊叶包裹糯米、咸蛋黄、五花肉（10元/个）</p>
+<p>火塘菜	冠洞侗寨农家	酸汤鱼套餐+糯米酒（40元/人）</p>
+<p>🗺️ 四、行程规划建议</p>
+<p>4天3夜深度游（参考三江文旅局推荐路线2）：</p>
+<p>Day 1：抵达三江南站→程阳八寨（宿吊脚楼民宿，150元/晚）→体验拦门酒+捶糍粑</p>
+<p>Day 2：程阳风雨桥晨拍→冠洞侗寨蓝靛染布→三江鼓楼夜景+歌会。</p>
+<p>Day 3：布央茶园采茶→丹洲古镇柚子酿→《坐妹》演出。</p>
+<p>Day 4：丹洲古城墙散步→返程前购茶油、香糯等特产。</p>
+<p>⚠️ 五、实用贴士</p>
+<p>交通：高铁直达三江南站，转旅游专线至程阳八寨（发车时间：10:00/12:10/14:50/17:40）</p>
+<p>最佳季节：四季皆宜，3-4月（柚花、采茶）、10月（斗牛赛）为旺季。</p>
+<p>省钱技巧：
+鼓楼广场咖啡馆点油茶（15元），免费拍全景。
+程阳风雨桥侗装租赁砍价至50元/套（含头饰+绣花鞋）。
+</p>
+        </div>
+
+        <div class="dong-pattern"></div>
+
+        <footer>
+            <p>&copy; ymz制作的三江侗族自治县旅游网站</p>
+        </footer>
+    </div>
+
+    <script>
+        // 页面数据
+        const scenicData = [
+            {
+                id: 1,
+                title: "三江风雨桥",
+                image: "img/11.jpg",
+                description: "三江风雨桥是位于广西柳州市三江侗族自治县浔江河上的一座标志性建筑，采用榫卯结构建造，未用一钉一铆，共用杉木3000立方米、青瓦110万片，装饰包含2392个“万”字构件、2336个“福”字构件及48条龙雕等，象征侗族图腾信仰与民族团结，2011年获上海大世界基尼斯总部认证为“世界最长风雨桥”，兼具交通运输与文化展示功能，成为侗乡核心景观"
+            },
+            {
+                id: 2,
+                title: "独峒镇",
+                image: "img/17.jpg",
+                description: "独峒镇位于广西三江侗族自治县西北部，是侗族文化核心腹地，被誉为“侗族艺术活态博物馆”。这里以三宝侗寨群为根基，坐拥世界罕见的双层侗族木构鼓楼群，其中高定鼓楼高达15层，全榫卯结构未用一钉。"
+            },
+            {
+                id: 3,
+                title: "三江鸟巢",
+                image: "img/13.png",
+                description: "三江鸟巢（正式名称为“侗乡鸟巢”）位于广西柳州市三江侗族自治县，是世界最大的主体为木结构的侗族特色场馆，2010年获上海大世界基尼斯认证145。其设计灵感源自侗家画眉鸟笼，主体由3000多立方米杉木以纯榫卯工艺建造（未用一钉一铆）。"
+            },
+            {
+                id: 4,
+                title: "三江鼓楼",
+                image: "img/14.png",
+                description: "三江鼓楼位于广西三江侗族自治县县城中心，是世界最高、规模最大的侗族鼓楼，楼内设4层观景台，登顶可俯瞰浔江全景；底层为侗族文化展厅，陈列着百年芦笙、织锦机等非遗珍品。"
+            },
+            {
+                id: 5,
+                title: "大唐坳",
+                image: "img/16.png",
+                description: "大塘坳位于广西三江侗族自治县独峒镇西北部，是桂北海拔最高（1100米）的喀斯特高山湖泊，被誉为“桂北天湖”。湖面面积300余亩，四周被原始森林和万亩高山草甸环绕，四季景观奇幻：春季湖畔20万株野生杜鹃怒放如焰，夏季云雾漫涌形成“湖面浮云”奇观，秋季层林尽染倒映碧水如油画，冬季可见罕见的高山雾凇与冰湖景观。"
+            },
+            {
+                id: 6,
+                title: "风雨桥",
+                image: "img/15.png",
+                description: "万峰林位于贵州省兴义市，是中国最大、最典型的喀斯特峰林。这里峰林密集奇特，气势宏大壮阔，堪称中国锥状喀斯特博物馆，被称誉为'天下奇观'。"
+            }
+        ];
+
+        // DOM元素
+        const cubeContainer = document.getElementById('cubeContainer');
+        const cube = document.getElementById('cube');
+        const cubeFaces = document.querySelectorAll('.cube-face');
+        const cardOverlay = document.getElementById('cardOverlay');
+        const card = document.getElementById('card');
+        const cardImage = document.getElementById('cardImage');
+        const cardTitle = document.getElementById('cardTitle');
+        const cardDescription = document.getElementById('cardDescription');
+        const closeBtn = document.getElementById('closeBtn');
+        const body = document.body;
+        const currentSection = document.getElementById('current-section');
+        const tourGuideSection = document.getElementById('tour-guide');
+        const tourGuideBtn = document.getElementById('tour-guide-btn');
+
+        // 鼠标悬停显示展开效果
+        cubeContainer.addEventListener('mouseenter', () => {
+            // 停止立方体旋转
+            cube.style.animation = 'none';
+            
+            // 添加展开类
+            setTimeout(() => {
+                cube.classList.add('expanded');
+            }, 100);
+        });
+
+        // 鼠标离开恢复立方体
+        cubeContainer.addEventListener('mouseleave', () => {
+            // 移除展开类
+            cube.classList.remove('expanded');
+            
+            // 恢复旋转
+            setTimeout(() => {
+                cube.style.animation = 'none';
+                cube.style.animation = 'rotate 15s infinite linear';
+            }, 1200); // 增加延迟以匹配最长的过渡动画
+        });
+
+        // 处理面的点击事件
+        cubeFaces.forEach(face => {
+            face.addEventListener('click', () => {
+                const title = face.querySelector('span').textContent;
+                const id = parseInt(title.split(' ')[1]);
+                const data = scenicData.find(item => item.id === id);
+                
+                if (data) {
+                    // 填充卡片数据
+                    cardImage.style.backgroundImage = `url(${data.image})`;
+                    cardTitle.textContent = data.title;
+                    cardDescription.textContent = data.description;
+                    
+                    // 显示卡片叠加层
+                    cardOverlay.style.display = 'flex';
+                    
+                    // 触发动画
+                    setTimeout(() => {
+                        card.classList.add('active');
+                    }, 10);
+                    
+                    // 禁止背景滚动
+                    body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // 关闭卡片
+        closeBtn.addEventListener('click', () => {
+            closeCard();
+        });
+
+        // 点击卡片外部关闭
+        cardOverlay.addEventListener('click', (e) => {
+            if (e.target === cardOverlay) {
+                closeCard();
+            }
+        });
+        // 关闭卡片的函数
+        function closeCard() {
+            // 移除动画类
+            card.classList.remove('active');
+            
+            // 隐藏卡片叠加层
+            setTimeout(() => {
+                cardOverlay.style.display = 'none';
+                // 允许背景滚动
+                body.style.overflow = '';
+            }, 300);
+        }
+
+        // 点击了解旅游攻略按钮的事件处理函数
+        tourGuideBtn.addEventListener('click', () => {
+            currentSection.style.display = 'none';
+            tourGuideSection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>        

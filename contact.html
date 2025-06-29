@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 三江侗族自治县</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5e6c8 0%, #d9c7a6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #1E3A8A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #9B2C2C;
+            font-style: italic;
+        }
+        
+        /* 导航栏样式 */
+        .dong-navbar {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a" opacity="0.9"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%231E3A8A" stroke-width="1" fill="none"/><path d="M0,30 Q25,10 50,30 T100,30" stroke="%239B2C2C" stroke-width="1" fill="none"/></svg>');
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto;
+            border: 2px solid #D4AF37;
+            border-bottom: 5px solid #D4AF37;
+            max-width: 1200px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            height: 80px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+        
+        .nav-links a {
+            color: #f5e6c8;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #D4AF37;
+            transform: translateY(-3px);
+        }
+        
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
+        
+        /* 侗族图案装饰 */
+        .nav-decoration {
+            position: absolute;
+            height: 40px;
+            width: 100%;
+            bottom: -5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><rect width="20" height="20" fill="%231E3A8A"/><rect x="40" width="20" height="20" fill="%231E3A8A"/><rect x="80" width="20" height="20" fill="%231E3A8A"/><circle cx="10" cy="10" r="8" fill="%239B2C2C"/><circle cx="50" cy="10" r="8" fill="%239B2C2C"/><circle cx="90" cy="10" r="8" fill="%239B2C2C"/><rect x="25" y="5" width="5" height="10" fill="%23D4AF37"/><rect x="65" y="5" width="5" height="10" fill="%23D4AF37"/></svg>') repeat-x;
+            background-size: contain;
+        }
+        
+        /* 主内容区域 */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+            width: 100%;
+        }
+        
+        /* 统一内容区块样式 */
+        .content-block {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #D4AF37;
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .content-block::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40"><path d="M0,40 L30,0 L60,40 L90,0 L120,40 L150,0" stroke="%23D4AF37" stroke-width="3" fill="none"/></svg>') no-repeat;
+        }
+        
+        /* 登录表单样式 */
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+        
+        .login-container {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .login-container h2 {
+            font-size: 2rem;
+            color: #1E3A8A;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f5e6c8;
+            position: relative;
+        }
+        
+        .login-container h2::after {
+            content: "✻";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1E3A8A;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: rgba(245, 230, 200, 0.3);
+        }
+        
+        .form-control:focus {
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            outline: none;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(45deg, #9B2C2C, #1E3A8A);
+            transform: translateY(-2px);
+        }
+        
+        .login-footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .login-footer a {
+            color: #1E3A8A;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .login-footer a:hover {
+            text-decoration: underline;
+            color: #9B2C2C;
+        }
+        
+        /* 联系信息区域 */
+        .section-title {
+            text-align: center;
+            color: #1E3A8A;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #9B2C2C;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "✻";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            background: linear-gradient(to bottom right, #f5e6c8, #e4d4b4);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature i {
+            font-size: 3rem;
+            color: #9B2C2C;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3,
+        .feature p {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature:hover h3,
+        .feature:hover p {
+            opacity: 1;
+        }
+        
+        .dong-pattern {
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30"><rect width="100" height="30" fill="%23f5e6c8"/><path d="M10,15 Q25,5 40,15 T70,15" stroke="%239B2C2C" stroke-width="1" fill="none"/><circle cx="15" cy="15" r="3" fill="%231E3A8A"/><circle cx="85" cy="15" r="3" fill="%231E3A8A"/><rect x="45" y="10" width="10" height="10" fill="%23D4AF37" rx="2"/></svg>') repeat-x;
+            margin: 40px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #1E3A8A;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 0;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-block {
+                padding: 20px;
+            }
+            
+            .login-container h2, .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="dong-navbar">
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="scenic-spots.html"><i class="fas fa-mountain"></i> 旅游景点</a></li>
+                        <li><a href="dong-culture.html"><i class="fas fa-drum"></i> 侗族文化</a></li>
+                        <li><a href="homestays.html"><i class="fas fa-bed"></i> 特色民宿</a></li>
+                        <li><a href="food.html"><i class="fas fa-utensils"></i> 特色美食</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="nav-decoration"></div>
+            </nav>
+        </header>
+        
+        <div class="main-content">
+            <div class="content-block">
+                <div class="login-container">
+                    <h2>用户登录</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" id="username" class="form-control" placeholder="请输入用户名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" id="password" class="form-control" placeholder="请输入密码" required>
+                        </div>
+                        <button type="submit" class="btn">登录</button>
+                        <div class="login-footer">
+                            还没有账号？<a href="register.html">立即注册</a> | <a href="forgot-password.html">忘记密码？</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h2 class="section-title">联系我们</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-phone"></i>
+                        <h3>联系电话</h3>
+                        <p>0772-8616567</p>
+                        <p>周一至周日: 8:00-18:00</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-envelope"></i>
+                        <h3>电子邮箱</h3>
+                        <p>info@sanjiang.gov.cn</p>
+                        <p>旅游咨询: tourism@sanjiang.gov.cn</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="dong-pattern"></div>
+        
+        <footer>
+            &copy; ymz制作的三江侗族自治县旅游网站
+        </footer>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // 简单的验证
+            if(username.trim() === '' || password.trim() === '') {
+                alert('请输入用户名和密码');
+                return;
+            }
+            
+            // 模拟登录成功
+            alert('登录成功，即将跳转到首页');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

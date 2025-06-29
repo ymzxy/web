@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侗族文化 - 三江侗族自治县</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 复用 index.html 的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5e6c8 0%, #d9c7a6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin: 0 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #1E3A8A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #9B2C2C;
+            font-style: italic;
+        }
+
+        /* 侗族特色导航栏 */
+        .dong-navbar {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a" opacity="0.9"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%231E3A8A" stroke-width="1" fill="none"/><path d="M0,30 Q25,10 50,30 T100,30" stroke="%239B2C2C" stroke-width="1" fill="none"/></svg>');
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: visible;
+            /* 修改为 visible 以显示下拉菜单 */
+            margin: 20px auto;
+            border: 2px solid #D4AF37;
+            border-bottom: 5px solid #D4AF37;
+            max-width: 1200px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+
+        .nav-links a {
+            color: #f5e6c8;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            color: #D4AF37;
+            transform: translateY(-3px);
+        }
+
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
+
+        /* 下拉菜单样式 */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(26, 26, 26, 0.95);
+            min-width: 200px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            top: 100%;
+            left: 0;
+            overflow: hidden;
+            border: 1px solid #D4AF37;
+            border-top: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 12px 20px;
+            color: #f5e6c8;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            color: #D4AF37;
+            padding-left: 25px;
+        }
+
+        .dropdown-content a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* 侗族图案装饰 */
+        .nav-decoration {
+            position: absolute;
+            height: 40px;
+            width: 100%;
+            bottom: -5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><rect width="20" height="20" fill="%231E3A8A"/><rect x="40" width="20" height="20" fill="%231E3A8A"/><rect x="80" width="20" height="20" fill="%231E3A8A"/><circle cx="10" cy="10" r="8" fill="%239B2C2C"/><circle cx="50" cy="10" r="8" fill="%239B2C2C"/><circle cx="90" cy="10" r="8" fill="%239B2C2C"/><rect x="25" y="5" width="5" height="10" fill="%23D4AF37"/><rect x="65" y="5" width="5" height="10" fill="%23D4AF37"/></svg>') repeat-x;
+            background-size: contain;
+        }
+
+        /* 内容展示区域 */
+        .content {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #D4AF37;
+            position: relative;
+            display: none;
+            /* 默认隐藏内容 */
+        }
+
+        .content::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40"><path d="M0,40 L30,0 L60,40 L90,0 L120,40 L150,0" stroke="%23D4AF37" stroke-width="3" fill="none"/></svg>') no-repeat;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1E3A8A;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #9B2C2C;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "✻";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            background: linear-gradient(to bottom right, #f5e6c8, #e4d4b4);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature i {
+            font-size: 3rem;
+            color: #9B2C2C;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .feature p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .dong-pattern {
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30"><rect width="100" height="30" fill="%23f5e6c8"/><path d="M10,15 Q25,5 40,15 T70,15" stroke="%239B2C2C" stroke-width="1" fill="none"/><circle cx="15" cy="15" r="3" fill="%231E3A8A"/><circle cx="85" cy="15" r="3" fill="%231E3A8A"/><rect x="45" y="10" width="10" height="10" fill="%23D4AF37" rx="2"/></svg>') repeat-x;
+            margin: 40px 0;
+            display: none;
+            /* 默认隐藏图案 */
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #1E3A8A;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* 文化特色展示 */
+        .cultural-features {
+            margin-top: 30px;
+        }
+
+        .cultural-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .cultural-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .cultural-image {
+            width: 50%;
+            position: relative;
+        }
+
+        .cultural-image img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #D4AF37;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 图片遮罩样式 */
+        .image-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            /* 初始高度为0 */
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+            /* 只保留顶部圆角 */
+            opacity: 0;
+            overflow: hidden;
+            /* 确保内容不溢出 */
+            transition: height 0.6s ease, opacity 0.3s ease, border-radius 0.6s ease;
+        }
+
+        .cultural-image:hover .image-mask {
+            height: 100%;
+            /* 悬停时高度变为100% */
+            opacity: 1;
+
+        }
+
+        .cultural-desc {
+            width: 50%;
+        }
+
+        .cultural-desc h3 {
+            color: #1E3A8A;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .cultural-desc h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #9B2C2C;
+        }
+
+        .cultural-desc p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .cultural-desc ul {
+            list-style: none;
+        }
+
+        .cultural-desc ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .cultural-desc ul li i {
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+
+        /* 活动预告 */
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .event-card {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+        }
+
+        .event-date {
+            background: linear-gradient(to bottom, #1E3A8A, #9B2C2C);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            min-width: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .event-date .month {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .event-info {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .event-info h3 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+        }
+
+        .event-info p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .event-info p i {
+            color: #9B2C2C;
+            margin-right: 5px;
+        }
+
+        p {
+            text-indent: 2em;
+        }
+
+        /* 优化服饰展示图片样式 */
+       .sunset-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+       .sunset-images div {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+       .sunset-images div img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+       .sunset-images div:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }#a:hover{
+			border-radius: 70%;
+			transition-property: border-radius;
+			transition-duration: 1s;
+			transition-timing-function: ease-in-out;
+		}
+		#b:hover{
+			transform: rotate(90deg);
+		}
+		#c:hover{
+			transition: transform 0.5s ease;
+			transform: rotate(360deg);
+		}
+		#d:hover{
+			transform: rotate(45deg);
+			transition: box-shadow;
+			box-shadow: 10px 10px 10px rgba(33,89,53,0.5);}
+		#f:hover{
+			transform: scale(1.2,1.5);
+		}
+		#e:hover{
+			transition: transform 0.5s ease;
+			transform: rotate(-360deg);
+		}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="dong-navbar">
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="scenic-spots.html"><i class="fas fa-mountain"></i> 旅游景点</a></li>
+                        <li class="dropdown">
+                            <a href="dong-culture.html" data-target="dong-culture" class="menu-link"><i class="fas fa-drum"></i> 侗族文化 <i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#" data-target="clothes" class="menu-link"><i class="fas fa-tshirt"></i> 服饰</a>
+                                <a href="#" data-target="activity" class="menu-link"><i class="fas fa-calendar-alt"></i> 活动</a>
+                            </div>
+                        </li>
+                        <li><a href="homestays.html"><i class="fas fa-bed"></i> 特色民宿</a></li>
+                        <li><a href="food.html"><i class="fas fa-utensils"></i> 特色美食</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="nav-decoration"></div>
+            </nav>
+        </header>
+        <div class="content" id="dong-culture">
+            <h2 class="section-title">侗族文化瑰宝</h2>
+
+            <div class="cultural-features">
+                <div class="cultural-item">
+                    <div class="cultural-image">
+                        <img src="img/2.png" alt="侗族建筑">
+                        <div class="image-mask">侗族建筑</div>
+                    </div>
+                    <div class="cultural-desc">
+                        <h3>建筑艺术</h3>
+                        <p>侗族建筑以鼓楼、风雨桥、吊脚楼为代表，全部采用榫卯结构，不用一钉一铆却能屹立数百年。这种独特的建筑技艺已被列入世界非物质文化遗产。</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 鼓楼：侗寨的政治文化中心</li>
+                            <li><i class="fas fa-check-circle"></i> 风雨桥：集桥、亭、廊于一体</li>
+                            <li><i class="fas fa-check-circle"></i> 吊脚楼：适应山地地形的民居</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cultural-item reverse">
+                    <div class="cultural-image">
+                        <img src="img/月耶.png" alt="侗族音乐">
+                        <div class="image-mask">大型多耶</div>
+                    </div>
+                    <div class="cultural-desc">
+                        <h3>音乐艺术</h3>
+                        <p>三江侗族自治县的"多耶"是侗族最具代表性的集体歌舞形式，被誉为"东方的圆舞曲"。每逢节庆，侗族男女老少便会身着盛装，手拉手围成圆圈，踏着芦笙的节奏载歌载舞。"多耶"二字侗语意为"踏歌而舞"，以悠扬的领唱、整齐的和声与富有韵律的踏步构成，歌词即兴创作，内容涵盖劳作、爱情、祝福等生活场景。</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> 侗族大歌：多声部合唱艺术</li>
+                            <li><i class="fas fa-check-circle"></i> 琵琶歌：叙事性民歌</li>
+                            <li><i class="fas fa-check-circle"></i> 芦笙舞：边吹边跳的集体舞蹈</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cultural-features">
+                    <div class="cultural-item">
+                        <div class="cultural-image">
+                            <img src="img/21.png" alt="侗族建筑">
+                            <div class="image-mask">百家宴</div>
+                        </div>
+                        <div class="cultural-desc">
+                            <h3>庆祝艺术</h3>
+                            <p>侗族的百家宴是侗族人民在重大节日或喜庆活动中举行的传统盛宴，以其规模宏大、氛围热烈而闻名。每逢节庆，全寨各家各户都会精心烹制拿手菜肴——酸汤鱼、腌肉、彩色糯米饭等特色美食——汇聚到鼓楼坪或风雨桥的长桌上，形成百米宴席长廊。
+                                全寨老少与宾客围坐共享，席间芦笙悠扬、歌声不断，人们举杯共饮糯米酒，传递"转转酒"，体现"饭养身，歌养心"的侗族哲学。
+                                百家宴不仅是侗族饮食文化的集中展示，更是侗族"团结互助、共享喜悦"民族精神的生动诠释，宾客尝百家菜、饮百家酒的过程，象征着侗家人"有福同享"的淳朴民风。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dong-pattern"></div>
+
+        <div class="content" id="clothes">
+            <h2 class="section-title">服饰展示</h2>
+            <!-- 优化后的图片布局 -->
+            <div class="sunset-images">
+                <div id="a">
+                    <img src="img/刺绣1.png" alt="" class="clothes-image">
+                </div>
+                <div id="b">
+                    <img src="img/服饰1.jpg" alt="" class="clothes-image">
+                </div>
+                <div id="c">
+                    <img src="img/服饰2.jpg" alt="" class="clothes-image">
+                </div>
+                <div id="d">
+                    <img src="img/服饰3.jpg" alt="" class="clothes-image">
+                </div>
+                <div id="e">
+                    <img src="img/服饰4.jpg" alt="" class="clothes-image">
+                </div>
+                <div id="f">
+                    <img src="img/服饰5.jpg" alt="" class="clothes-image">
+                </div>
+            </div>
+        </div>
+        <div class="dong-pattern"></div>
+
+        <div class="content" id="activity">
+            <h2 class="section-title">近期活动与节日</h2>
+
+            <div class="events">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">八月</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>芦笙舞</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 各个村寨</p>
+                        <p>侗族文化的灵魂之舞，舞者随着悠扬的芦笙旋律踏节而舞，以整齐的踏步、旋转的裙摆和此起彼伏的和声，展现侗家人对自然的敬畏与生活的热爱，被誉为"会说话的艺术"。</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">28</span>
+                        <span class="month">十月</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>斗牛比赛</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 三江斗牛场</p>
+                        <p>传承百年的民俗盛事，以原生态的水牛角力展现侗家人崇尚勇武的精神，激烈的牛王争霸与万众欢腾的芦笙歌舞交织，构成一幅震撼人心的民俗画卷。</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">9</span>
+                        <span class="month">十一月</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>多耶比赛</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 三江多耶广场</p>
+                        <p>侗族最欢乐的歌舞盛会，各村寨代表队身着盛装围成圆圈，以即兴编创的歌词和整齐划一的踏步声一较高下，将侗族"以歌传情、以舞会友"展现得淋漓尽致。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; ymz制作的三江侗族自治县旅游网站</p>
+        </footer>
+    </div>
+    <script>
+        // 获取所有导航链接
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const contents = document.querySelectorAll('.content');
+        const patterns = document.querySelectorAll('.dong-pattern');
+        
+        // 默认显示文化瑰宝内容
+        document.getElementById('dong-culture').style.display = 'block';
+        document.querySelector('.dong-pattern').style.display = 'block';
+
+        // 为每个导航链接添加点击事件
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                
+                // 如果点击的是"侗族文化"主菜单
+                if (targetId === 'dong-culture') {
+                    // 隐藏所有内容和图案
+                    contents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    patterns.forEach(pattern => {
+                        pattern.style.display = 'none';
+                    });
+                    
+                    // 显示文化瑰宝内容和第一个图案
+                    document.getElementById('dong-culture').style.display = 'block';
+                    document.querySelector('.dong-pattern').style.display = 'block';
+                } 
+                // 如果点击的是下拉菜单中的选项
+                else if (targetId === 'clothes' || targetId === 'activity') {
+                    // 隐藏所有内容和图案
+                    contents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    patterns.forEach(pattern => {
+                        pattern.style.display = 'none';
+                    });
+                    
+                    // 显示目标内容和相邻图案
+                    document.getElementById(targetId).style.display = 'block';
+                    const nextPattern = document.getElementById(targetId).nextElementSibling;
+                    if (nextPattern && nextPattern.classList.contains('dong-pattern')) {
+                        nextPattern.style.display = 'block';
+                    }
+                }
+            });
+        });
+		// 修改现有的JavaScript代码，添加以下内容
+		document.addEventListener('DOMContentLoaded', function() {
+		    let dropdownTimer;
+		    const dropdowns = document.querySelectorAll('.dropdown');
+		    
+		    dropdowns.forEach(dropdown => {
+		        const dropdownContent = dropdown.querySelector('.dropdown-content');
+		        
+		        dropdown.addEventListener('mouseenter', function() {
+		            clearTimeout(dropdownTimer);
+		            dropdownContent.style.display = 'block';
+		        });
+		        
+		        dropdown.addEventListener('mouseleave', function() {
+		            dropdownTimer = setTimeout(function() {
+		                dropdownContent.style.display = 'none';
+		            }, 300); // 300毫秒延迟
+		        });
+		        
+		        dropdownContent.addEventListener('mouseenter', function() {
+		            clearTimeout(dropdownTimer);
+		        });
+		        
+		        dropdownContent.addEventListener('mouseleave', function() {
+		            dropdownTimer = setTimeout(function() {
+		                dropdownContent.style.display = 'none';
+		            }, 300); // 300毫秒延迟
+		        });
+		    });
+		});
+    </script>
+</body>
+
+</html>

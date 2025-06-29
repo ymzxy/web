@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特色民宿 - 三江侗族自治县</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5e6c8 0%, #d9c7a6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin: 0 0;
+            padding: 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #1E3A8A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #9B2C2C;
+            font-style: italic;
+        }
+        
+        /* 侗族特色导航栏 */
+        .dong-navbar {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a" opacity="0.9"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%231E3A8A" stroke-width="1" fill="none"/><path d="M0,30 Q25,10 50,30 T100,30" stroke="%239B2C2C" stroke-width="1" fill="none"/></svg>');
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto;
+            border: 2px solid #D4AF37;
+            border-bottom: 5px solid #D4AF37;
+            max-width: 1200px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            height: 80px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+        
+        .nav-links a {
+            color: #f5e6c8;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #D4AF37;
+            transform: translateY(-3px);
+        }
+        
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
+        
+        /* 侗族图案装饰 */
+        .nav-decoration {
+            position: absolute;
+            height: 40px;
+            width: 100%;
+            bottom: -5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><rect width="20" height="20" fill="%231E3A8A"/><rect x="40" width="20" height="20" fill="%231E3A8A"/><rect x="80" width="20" height="20" fill="%231E3A8A"/><circle cx="10" cy="10" r="8" fill="%239B2C2C"/><circle cx="50" cy="10" r="8" fill="%239B2C2C"/><circle cx="90" cy="10" r="8" fill="%239B2C2C"/><rect x="25" y="5" width="5" height="10" fill="%23D4AF37"/><rect x="65" y="5" width="5" height="10" fill="%23D4AF37"/></svg>') repeat-x;
+            background-size: contain;
+        }
+        
+        /* 内容展示区域 */
+        .content {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #D4AF37;
+            position: relative;
+        }
+        
+        .content::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40"><path d="M0,40 L30,0 L60,40 L90,0 L120,40 L150,0" stroke="%23D4AF37" stroke-width="3" fill="none"/></svg>') no-repeat;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #1E3A8A;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #9B2C2C;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "✻";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+        
+        /* 民宿展示区域 */
+        .homestay-recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .homestay-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #D4AF37;
+            position: relative;
+        }
+        
+        .homestay-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(30, 58, 138, 0.8); /* 发光过渡效果 */
+        }
+        
+        .homestay-img-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            perspective: 1000px; /* 3D透视效果 */
+        }
+        
+        .homestay-img,
+        .rating-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: transform 0.6s;
+        }
+        
+        .homestay-img {
+            object-fit: cover;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .rating-back {
+            background-color: rgba(227, 210, 178, 1.0);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transform: rotateY(180deg);
+        }
+        
+        .homestay-img-container:hover .homestay-img {
+            transform: rotateY(180deg);
+        }
+        
+        .homestay-img-container:hover .rating-back {
+            transform: rotateY(0deg);
+        }
+        
+        .homestay-info {
+            padding: 20px;
+        }
+        
+        .homestay-info h3 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .price {
+            font-size: 1.3rem;
+            color: #9B2C2C;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .price span {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .facilities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .facility {
+            background-color: #f5e6c8;
+            color: #1E3A8A;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .facility i {
+            margin-right: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .book-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .book-btn:hover {
+            background: linear-gradient(45deg, #9B2C2C, #1E3A8A);
+            transform: translateY(-2px);
+        }
+        
+        /* 在线预订板块 */
+        .booking-section {
+            background: linear-gradient(to bottom right, #f5e6c8, #e4d4b4);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+        }
+        
+        .booking-title {
+            text-align: center;
+            color: #1E3A8A;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .booking-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1E3A8A;
+            font-weight: bold;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #D4AF37;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            grid-column: 1 / -1;
+            padding: 15px;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #9B2C2C, #1E3A8A);
+        }
+        
+        /* 预订模态框 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid #D4AF37;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: #9B2C2C;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-title {
+            color: #1E3A8A;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .modal-homestay {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        .modal-homestay img {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+            border: 1px solid #D4AF37;
+        }
+        
+        .modal-homestay-info h4 {
+            color: #1E3A8A;
+            margin-bottom: 5px;
+        }
+        
+        .modal-homestay-info .price {
+            color: #9B2C2C;
+            font-weight: bold;
+        }
+        
+        /* 侗族图案分隔线 */
+        .dong-pattern {
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30"><rect width="100" height="30" fill="%23f5e6c8"/><path d="M10,15 Q25,5 40,15 T70,15" stroke="%239B2C2C" stroke-width="1" fill="none"/><circle cx="15" cy="15" r="3" fill="%231E3A8A"/><circle cx="85" cy="15" r="3" fill="%231E3A8A"/><rect x="45" y="10" width="10" height="10" fill="%23D4AF37" rx="2"/></svg>') repeat-x;
+            margin: 40px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #1E3A8A;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .homestay-recommendations {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="dong-navbar">
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="scenic-spots.html"><i class="fas fa-mountain"></i> 旅游景点</a></li>
+                        <li><a href="dong-culture.html"><i class="fas fa-drum"></i> 侗族文化</a></li>
+                        <li><a href="homestays.html"><i class="fas fa-bed"></i> 特色民宿</a></li>
+                        <li><a href="food.html"><i class="fas fa-utensils"></i> 特色美食</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="nav-decoration"></div>
+            </nav>
+        </header>
+        
+        <div class="content">
+            <h2 class="section-title">特色民宿</h2>
+            <div class="homestay-recommendations">
+                <!-- 民宿1 -->
+                <div class="homestay-card">
+                    <div class="homestay-img-container">
+                        <img src="img/民宿1.png" alt="侗族风情民宿" class="homestay-img" onerror="this.src='https://via.placeholder.com/400x300?text=侗族风情民宿'">
+                        <div class="rating-back">★★★★</div>
+                    </div>
+                    <div class="homestay-info">
+                        <h3>侗族风情民宿</h3>
+                        <div class="price">¥388 <span>/晚</span></div>
+                        <p>位于侗寨中心，体验地道侗族生活，感受浓郁民族风情。</p>
+                        <div class="facilities">
+                            <span class="facility"><i class="fas fa-wifi"></i> 免费WiFi</span>
+                            <span class="facility"><i class="fas fa-utensils"></i> 早餐</span>
+                            <span class="facility"><i class="fas fa-parking"></i> 停车</span>
+                        </div>
+                        <button class="book-btn" onclick="openBookingModal('侗族风情民宿', '388', 'img/民宿1.png')">立即预订</button>
+                    </div>
+                </div>
+                
+                <!-- 民宿2 -->
+                <div class="homestay-card">
+                    <div class="homestay-img-container">
+                        <img src="img/民宿2.png" alt="山水景观民宿" class="homestay-img" onerror="this.src='https://via.placeholder.com/400x300?text=山水景观民宿'">
+                        <div class="rating-back">★★★★★</div>
+                    </div>
+                    <div class="homestay-info">
+                        <h3>山水景观民宿</h3>
+                        <div class="price">¥488 <span>/晚</span></div>
+                        <p>坐拥美丽山水，享受宁静假期，远离城市喧嚣。</p>
+                        <div class="facilities">
+                            <span class="facility"><i class="fas fa-wifi"></i> 免费WiFi</span>
+                            <span class="facility"><i class="fas fa-swimming-pool"></i> 泳池</span>
+                            <span class="facility"><i class="fas fa-spa"></i> SPA</span>
+                            <span class="facility"><i class="fas fa-utensils"></i> 餐厅</span>
+                        </div>
+                        <button class="book-btn" onclick="openBookingModal('山水景观民宿', '488', 'img/民宿2.png')">立即预订</button>
+                    </div>
+                </div>
+                
+                <!-- 民宿3 -->
+                <div class="homestay-card">
+                    <div class="homestay-img-container">
+                        <img src="img/民宿3.png" alt="鼓楼观景民宿" class="homestay-img" onerror="this.src='https://via.placeholder.com/400x300?text=鼓楼观景民宿'">
+                        <div class="rating-back">★★★</div>
+                    </div>
+                    <div class="homestay-info">
+                        <h3>鼓楼观景民宿</h3>
+                        <div class="price">¥358 <span>/晚</span></div>
+                        <p>侗寨鼓楼旁，最佳观景位置，体验侗族建筑魅力。</p>
+                        <div class="facilities">
+                            <span class="facility"><i class="fas fa-wifi"></i> 免费WiFi</span>
+                            <span class="facility"><i class="fas fa-utensils"></i> 早餐</span>
+                            <span class="facility"><i class="fas fa-tshirt"></i> 洗衣</span>
+                        </div>
+                        <button class="book-btn" onclick="openBookingModal('鼓楼观景民宿', '358', 'img/民宿3.png')">立即预订</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 在线预订板块 -->
+            <div class="booking-section">
+                <h3 class="booking-title">在线预订</h3>
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="check-in">入住日期</label>
+                        <input type="date" id="check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">退房日期</label>
+                        <input type="date" id="check-out" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">人数</label>
+                        <select id="guests" required>
+                            <option value="">请选择</option>
+                            <option value="1">1人</option>
+                            <option value="2">2人</option>
+                            <option value="3">3人</option>
+                            <option value="4">4人</option>
+                            <option value="5+">5人以上</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="homestay">民宿选择</label>
+                        <select id="homestay" required>
+                            <option value="">请选择</option>
+                            <option value="侗族风情民宿">侗族风情民宿</option>
+                            <option value="山水景观民宿">山水景观民宿</option>
+                            <option value="鼓楼观景民宿">鼓楼观景民宿</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">查询可用房间</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- 预订模态框 -->
+        <div class="modal" id="bookingModal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <h3 class="modal-title">民宿预订</h3>
+                
+                <div class="modal-homestay">
+                    <img id="modalHomestayImg" src="" alt="">
+                    <div class="modal-homestay-info">
+                        <h4 id="modalHomestayName"></h4>
+                        <div class="price" id="modalHomestayPrice"></div>
+                    </div>
+                </div>
+                
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="modal-check-in">入住日期</label>
+                        <input type="date" id="modal-check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-check-out">退房日期</label>
+                        <input type="date" id="modal-check-out" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-guests">人数</label>
+                        <select id="modal-guests" required>
+                            <option value="">请选择</option>
+                            <option value="1">1人</option>
+                            <option value="2">2人</option>
+                            <option value="3">3人</option>
+                            <option value="4">4人</option>
+                            <option value="5+">5人以上</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">电话</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">特殊要求</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">确认预订</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="dong-pattern"></div>
+        
+        <footer>
+            &copy; 2024 三江侗族自治县旅游网站
+        </footer>
+    </div>
+    
+    <script>
+        // 打开预订模态框
+        function openBookingModal(name, price, img) {
+            document.getElementById('modalHomestayName').textContent = name;
+            document.getElementById('modalHomestayPrice').textContent = '¥' + price + '/晚';
+            document.getElementById('modalHomestayImg').src = img;
+            document.getElementById('bookingModal').style.display = 'flex';
+            
+            // 设置默认日期为明天
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            const formattedDate = tomorrow.toISOString().split('T')[0];
+            document.getElementById('modal-check-in').value = formattedDate;
+            
+            // 设置默认退房日期为后天
+            const dayAfterTomorrow = new Date(tomorrow);
+            dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 1);
+            document.getElementById('modal-check-out').value = dayAfterTomorrow.toISOString().split('T')[0];
+        }
+        
+        // 关闭模态框
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+        
+        // 点击模态框外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // 表单提交处理
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('预订成功！我们将尽快与您确认预订详情。');
+            closeModal();
+        });
+        
+        // 主预订表单提交处理
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const homestay = document.getElementById('homestay').value;
+            const checkIn = document.getElementById('check-in').value;
+            const checkOut = document.getElementById('check-out').value;
+            
+            if (homestay && checkIn && checkOut) {
+                alert(`正在查询${homestay}从${checkIn}至${checkOut}的可用房间...`);
+            }
+        });
+    </script>
+</body>
+</html>
+    

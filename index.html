@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侗族特色导航栏</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+        }
+        
+       body {
+           /* 将背景渐变替换为图片 */
+           background: url('img/风雨桥.png') no-repeat center center fixed;
+           background-size: cover;
+           min-height: 100vh;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 20px;
+           color: #333;
+       }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin: 0 0;
+            padding: 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #1E3A8A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+			font-family: "侗族大歌", sans-serif;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #9B2C2C;
+            font-style: italic;
+        }
+        
+       /* 侗族特色导航栏 */
+       .dong-navbar {
+           background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a" opacity="0.9"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%231E3A8A" stroke-width="1" fill="none"/><path d="M0,30 Q25,10 50,30 T100,30" stroke="%239B2C2C" stroke-width="1" fill="none"/></svg>');
+           background-size: cover;
+           border-radius: 10px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+           position: relative;
+           overflow: hidden;
+           margin: 20px auto;
+           border: 2px solid #D4AF37;
+           border-bottom: 5px solid #D4AF37;
+           max-width: 1200px;
+       }
+       
+       .nav-container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 0 30px;
+           height: 80px;
+       }
+       
+       .nav-links {
+           display: flex;
+           list-style: none;
+           margin: 0 auto;
+           padding: 0;
+       }
+        
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+        
+        .nav-links a {
+            color: #f5e6c8;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #D4AF37;
+            transform: translateY(-3px);
+        }
+        
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
+        
+        /* 侗族图案装饰 */
+        .nav-decoration {
+            position: absolute;
+            height: 40px;
+            width: 100%;
+            bottom: -5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><rect width="20" height="20" fill="%231E3A8A"/><rect x="40" width="20" height="20" fill="%231E3A8A"/><rect x="80" width="20" height="20" fill="%231E3A8A"/><circle cx="10" cy="10" r="8" fill="%239B2C2C"/><circle cx="50" cy="10" r="8" fill="%239B2C2C"/><circle cx="90" cy="10" r="8" fill="%239B2C2C"/><rect x="25" y="5" width="5" height="10" fill="%23D4AF37"/><rect x="65" y="5" width="5" height="10" fill="%23D4AF37"/></svg>') repeat-x;
+            background-size: contain;
+        }
+        
+        /* 侗族特色轮播图 */
+        .dong-carousel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid #D4AF37;
+        }
+        
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30, 58, 138, 0.8), transparent);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .carousel-caption h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #D4AF37;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .carousel-caption p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(30, 58, 138, 0.7);
+            color: #D4AF37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            border: 2px solid #D4AF37;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-control:hover {
+            background-color: rgba(155, 44, 44, 0.7);
+        }
+        
+        .carousel-control.prev {
+            left: 20px;
+        }
+        
+        .carousel-control.next {
+            right: 20px;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .carousel-indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            border: 2px solid #D4AF37;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-indicator.active {
+            background-color: #D4AF37;
+            transform: scale(1.2);
+        }
+        
+        /* 内容展示区域 */
+        .content {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #D4AF37;
+            position: relative;
+        }
+        
+        .content::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40"><path d="M0,40 L30,0 L60,40 L90,0 L120,40 L150,0" stroke="%23D4AF37" stroke-width="3" fill="none"/></svg>') no-repeat;
+        }
+        .section-title {
+            text-align: center;
+            color: #1E3A8A;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #9B2C2C;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "✻";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            background: linear-gradient(to bottom right, #f5e6c8, #e4d4b4);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature i {
+            font-size: 3rem;
+            color: #9B2C2C;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature p {
+            color: #333;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #ffff7f;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* 新增样式 */
+        /* 欢迎语部分样式 */
+        .welcome-section {
+            margin-top: 20px;
+        }
+
+        .welcome-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* 视频播放器样式 */
+        .welcome-video {
+            width: 50%;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #D4AF37;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .welcome-video video {
+            width: 100%;
+            display: block;
+            background: #000;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 1200px) {
+            .welcome-video {
+                width: 100%;
+            }
+        }
+
+        .welcome-text {
+            width: 50%;
+        }
+
+        .welcome-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #1E3A8A, #9B2C2C);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid #D4AF37;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn i {
+            margin-left: 5px;
+        }
+
+        /* 文化特色展示 */
+        .cultural-features {
+            margin-top: 30px;
+        }
+
+        .cultural-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .cultural-item.reverse {
+            flex-direction: row-reverse;
+        }
+        .cultural-desc {
+            width: 50%;
+        }
+
+        .cultural-desc h3 {
+            color: #1E3A8A;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .cultural-desc h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #9B2C2C;
+        }
+
+        .cultural-desc p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .cultural-desc ul {
+            list-style: none;
+        }
+
+        .cultural-desc ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .cultural-desc ul li i {
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+
+        /* 旅游推荐手风琴样式 */
+        .accordion-container {
+            display: flex;
+            width: 100%;
+            height: 400px;
+            margin: 30px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .accordion-item {
+            flex: 0 0 80px;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            filter: brightness(0.85);
+        }
+
+        .accordion-item.active {
+            flex: 1;
+            filter: brightness(1);
+            z-index: 10;
+        }
+
+        .item-overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            transition-delay: 0.1s;
+        }
+
+        .accordion-item.active .item-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .item-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .item-title {
+            transform: translateY(0);
+        }
+
+        .item-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            transition-delay: 0.2s;
+        }
+
+        .accordion-item.active .item-desc {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .item-number {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            z-index: 10;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover .item-number,
+        .accordion-item.active .item-number {
+            opacity: 1;
+            transform: scale(1);
+        }
+#text-indent {
+            text-indent: 2em; /* 首行缩进两个字符 */
+        }
+        @media (max-width: 992px) {
+            .accordion-container {
+                height: 300px;
+            }
+            
+            .item-overlay {
+                padding: 20px;
+            }
+            
+            .item-title {
+                font-size: 24px;
+            }
+            
+            .item-desc {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .accordion-container {
+                flex-direction: column;
+                height: auto;
+                max-height: 80vh;
+            }
+            
+            .accordion-item {
+                width: 100%;
+                height: 80px;
+                flex: 0 0 80px;
+            }
+            
+            .accordion-item.active {
+                flex: 1;
+            }
+            
+            .item-number {
+                top: 20px;
+                left: 20px;
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 900px) {
+            .welcome-content, .cultural-item, .cultural-item.reverse {
+                flex-direction: column;
+            }
+            
+            .welcome-image, .welcome-text, .cultural-image, .cultural-desc {
+                width: 100%;
+            }
+            
+            .cultural-item {
+                margin-bottom: 30px;
+            }
+            
+            .nav-links a {
+                padding: 15px 18px;
+                font-size: 1rem;
+            }
+            
+            .dong-carousel {
+                height: 300px;
+            }
+            
+            .carousel-caption h3 {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .dong-carousel {
+                height: 250px;
+            }
+            
+            .carousel-control {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .tour-recommendations {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+			 <h1>三江侗族之乡</h1>
+            <nav class="dong-navbar">
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="scenic-spots.html"><i class="fas fa-mountain"></i> 旅游景点</a></li>
+                        <li><a href="dong-culture.html"><i class="fas fa-drum"></i> 侗族文化</a></li>
+                        <li><a href="homestays.html"><i class="fas fa-bed"></i> 特色民宿</a></li>
+                        <li><a href="food.html"><i class="fas fa-utensils"></i> 特色美食</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="nav-decoration"></div>
+            </nav>
+        </header>
+        
+        <!-- 侗族特色轮播图 -->
+        <div class="dong-carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/鼓楼.jpg" alt="侗族鼓楼">
+                    <div class="carousel-caption">
+                        <h3>侗族鼓楼</h3>
+                        <p>侗族村寨的标志性建筑，全木结构，不用一钉一铆，以榫卯连接，是侗族人民高超的建筑技艺。</p><br />
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/程阳.png" alt="程阳风雨桥">
+                    <div class="carousel-caption">
+                        <h3>程阳风雨桥</h3>
+                        <p>以纯木结构、无钉无铆的侗族建筑技艺闻名，被誉为"侗族建筑艺术的璀璨明珠"。</p><br />
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/丹州景区.png" alt="丹州景区">
+                    <div class="carousel-caption">
+                        <h3>丹州景区</h3>
+                        <p>融江河畔的千年古城岛，四面环水，古韵悠然，以保存完好的明清建筑群、田园诗意的柚子林和独特的"岛居"慢生活体验，被誉为"水上桃源·千年丹洲"</p><br />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-control prev" onclick="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="carousel-control next" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            
+            <div class="carousel-indicators">
+                <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
+                <div class="carousel-indicator" onclick="goToSlide(1)"></div>
+                <div class="carousel-indicator" onclick="goToSlide(2)"></div>
+            </div>
+        </div>
+        
+        <!-- 欢迎语和简介 -->
+        <div class="content welcome-section">
+            <h2 class="section-title">欢迎来到侗乡</h2>
+            <div class="welcome-content">
+                <div class="welcome-video">
+                    <video controls poster="https://example.com/dong-village-poster.jpg">
+                        <source src="img/三江宣传视频.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="welcome-text" id="text-indent">
+                    <p>三江侗族自治县位于广西壮族自治区柳州市北部，是全国唯一的侗族自治县，地处湘、黔、桂三省区交界处，素有"侗族文化摇篮"之美誉,这个"百节之乡"以山水为画卷，以歌谣为语言。</p>
+                    <p>这里保存着最完整的侗族传统文化，拥有世界闻名的程阳风雨桥、马胖鼓楼等侗族建筑瑰宝，以及被列入联合国非物质文化遗产的侗族大歌。</p>
+                    <p>三江以其独特的侗族村寨、壮观的梯田风光、精美的侗族服饰和银饰工艺，以及酸鱼、油茶等特色美食吸引着八方游客，是体验原生态侗族文化的绝佳目的地。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 旅游推荐 -->
+        <div class="content">
+            <h2 class="section-title">侗族风情游推荐</h2>
+            
+            <div class="accordion-container" id="accordionContainer">
+                <!-- 第1项 -->
+                <div 
+                    class="accordion-item active" 
+                    style="background-image: url('img/三江大侗寨景区‌.png')">
+                    <div class="item-overlay">
+                        <h3 class="item-title">三江大侗寨景区‌</h3>
+                        <p class="item-desc">让游客一站式体验'侗族建筑艺术巅峰、歌舞盛宴与舌尖风味'的文旅综合体。</p>
+                    </div>
+                    <div class="item-number">1</div>
+                </div>
+                
+                <!-- 第2项 -->
+                <div 
+                    class="accordion-item" 
+                    style="background-image: url('img/丹洲古镇‌.png')">
+                    <div class="item-overlay">
+                        <h3 class="item-title">丹洲古镇‌</h3>
+                        <p class="item-desc">漂浮在融江上的千年诗意孤岛，被誉为'中国最美水上古城'。</p>
+                    </div>
+                    <div class="item-number">2</div>
+                </div>
+                
+                <!-- 第3项 -->
+                <div 
+                    class="accordion-item" 
+                    style="background-image: url('img/程阳八寨.png')">
+                    <div class="item-overlay">
+                        <h3 class="item-title">独峒镇</h3>
+                        <p class="item-desc"></p>
+                    </div>
+                    <div class="item-number">3</div>
+                </div>
+				<div
+				    class="accordion-item" 
+				    style="background-image: url('img/1.png')"
+				>
+				    <div class="item-overlay">
+				        <h3 class="item-title">程阳八寨‌</h3>
+				        <p class="item-desc">非遗手作聚集地，可深度体验蓝靛染布、侗布刺绣等传统工艺。</p>
+				    </div>
+				    <div class="item-number">4</div>
+				</div>
+				<div
+				    class="accordion-item" 
+				    style="background-image: url('img/6.png')">
+				    <div class="item-overlay">
+				        <h3 class="item-title">三江楼群‌</h3>
+				        <p class="item-desc">有着格式各样的鼓楼，吊脚楼</p>
+				    </div>
+				    <div class="item-number">5</div>
+				</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; ymz制作的三江侗族自治县旅游网站</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 轮播图功能
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        const totalSlides = slides.length;
+        
+        function updateCarousel() {
+            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // 更新指示器状态
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        // 自动轮播
+        let slideInterval = setInterval(nextSlide, 2000);
+        // 鼠标悬停时暂停自动轮播
+        document.querySelector('.dong-carousel').addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        // 鼠标离开时恢复自动轮播
+        document.querySelector('.dong-carousel').addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 2000);
+        });
+
+        // 手风琴效果
+        const accordionContainer = document.getElementById('accordionContainer');
+        const items = document.querySelectorAll('.accordion-item');
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                items.forEach(i => {
+                    i.classList.remove('active');
+                });
+                item.classList.add('active');
+            });
+            
+            item.addEventListener('mouseenter', () => {
+                if (!item.classList.contains('active')) {
+                    item.style.transform = 'scale(1.01)';
+                    item.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.2)';
+                    item.style.zIndex = '5';
+                }
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                if (!item.classList.contains('active')) {
+                    item.style.transform = '';
+                    item.style.boxShadow = '';
+                    item.style.zIndex = '';
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!accordionContainer.contains(document.activeElement)) return;
+            
+            const activeIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+            const isRTL = getComputedStyle(document.documentElement).direction === 'rtl';
+            
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prevIndex = (activeIndex - 1 + items.length) % items.length;
+                items[prevIndex].click();
+                items[prevIndex].focus();
+            }
+            
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                const nextIndex = (activeIndex + 1) % items.length;
+                items[nextIndex].click();
+                items[nextIndex].focus();
+            }
+        });
+
+        items.forEach((item, index) => {
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('aria-label', `旅游景点 ${index + 1}`);
+        });
+    </script>
+</body>
+</html>

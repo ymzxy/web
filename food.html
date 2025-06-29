@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特色美食 - 三江侗族自治县</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 引入 index.html 中的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'STKaiti', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5e6c8 0%, #d9c7a6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin: 0 0;
+            padding: 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #1E3A8A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #9B2C2C;
+            font-style: italic;
+        }
+        
+       /* 侗族特色导航栏 */
+       .dong-navbar {
+           background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a" opacity="0.9"/><path d="M0,50 Q25,30 50,50 T100,50" stroke="%231E3A8A" stroke-width="1" fill="none"/><path d="M0,30 Q25,10 50,30 T100,30" stroke="%239B2C2C" stroke-width="1" fill="none"/></svg>');
+           background-size: cover;
+           border-radius: 10px;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+           position: relative;
+           overflow: hidden;
+           margin: 20px auto;
+           border: 2px solid #D4AF37;
+           border-bottom: 5px solid #D4AF37;
+           max-width: 1200px;
+       }
+       
+       .nav-container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 0 30px;
+           height: 80px;
+       }
+       
+       .nav-links {
+           display: flex;
+           list-style: none;
+           margin: 0 auto;
+           padding: 0;
+       }
+        
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+        
+        .nav-links a {
+            color: #f5e6c8;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #D4AF37;
+            transform: translateY(-3px);
+        }
+        
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1E3A8A, #9B2C2C);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
+        
+        /* 侗族图案装饰 */
+        .nav-decoration {
+            position: absolute;
+            height: 40px;
+            width: 100%;
+            bottom: -5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><rect width="20" height="20" fill="%231E3A8A"/><rect x="40" width="20" height="20" fill="%231E3A8A"/><rect x="80" width="20" height="20" fill="%231E3A8A"/><circle cx="10" cy="10" r="8" fill="%239B2C2C"/><circle cx="50" cy="10" r="8" fill="%239B2C2C"/><circle cx="90" cy="10" r="8" fill="%239B2C2C"/><rect x="25" y="5" width="5" height="10" fill="%23D4AF37"/><rect x="65" y="5" width="5" height="10" fill="%23D4AF37"/></svg>') repeat-x;
+            background-size: contain;
+        }
+        
+        /* 内容展示区域 */
+        .content {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #D4AF37;
+            position: relative;
+        }
+        
+        .content::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40"><path d="M0,40 L30,0 L60,40 L90,0 L120,40 L150,0" stroke="%23D4AF37" stroke-width="3" fill="none"/></svg>') no-repeat;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #1E3A8A;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #9B2C2C;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "✻";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #D4AF37;
+            font-size: 1.5rem;
+        }
+        
+        /* 美食卡片样式 */
+        .food-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 80px; /* 增大轮播图和卡片的距离 */
+        }
+        
+        .food-card {
+            position: relative;
+            height: 300px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        
+        .food-card-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .food-card:hover .food-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .food-card-front, .food-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D4AF37;
+        }
+        
+        .food-card-front {
+            background: linear-gradient(to bottom right, #f5e6c8, #e4d4b4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .food-card-front i {
+            font-size: 3rem;
+            color: #9B2C2C;
+            margin-bottom: 20px;
+        }
+        
+        .food-card-front h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .food-card-front p {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .food-card-back {
+            background-color: #f5e6c8;
+            transform: rotateY(180deg);
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .food-card-back.enlarged {
+            transform: rotateY(180deg) scale(1.2);
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dong-pattern {
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30"><rect width="100" height="30" fill="%23f5e6c8"/><path d="M10,15 Q25,5 40,15 T70,15" stroke="%239B2C2C" stroke-width="1" fill="none"/><circle cx="15" cy="15" r="3" fill="%231E3A8A"/><circle cx="85" cy="15" r="3" fill="%231E3A8A"/><rect x="45" y="10" width="10" height="10" fill="%23D4AF37" rx="2"/></svg>') repeat-x;
+            margin: 40px 0;
+        }
+        .shell{
+            position: relative;
+            width: 60vw;
+            height: 40vw;
+            max-width: 380px;
+            max-height: 250px;
+            margin: 0 auto; /* 将轮播图放中间 */
+            color: white;
+            perspective: 1000px;
+            transform-origin: center;
+        }
+        .contentt{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: translateZ(-30vw) rotateY(0);
+            animation: carousel 9s infinite cubic-bezier(0.77,0,0.175,1) forwards;
+            
+        }
+        .itemm{
+            position: absolute;
+            width: 60vw;
+            height: 40vw;
+            max-width: 380px;
+            max-height: 250px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            background-size: cover;
+            -webkit-box-reflect:below 25px -webkit-linear-gradient(transparent 50%,rgba(255, 255, 255, 0.3));
+            
+        }
+        .itemm:nth-child(1){
+            background-image: url(img/牛瘪.png);
+            transform: rotateY(0) translateZ(35vw);
+        }
+        .itemm:nth-child(2){
+            background-image: url(img/19.png);
+            transform: rotateY(120deg) translateZ(35vw);
+        }
+        .itemm:nth-child(3){
+            background-image: url(img/20.png);
+            transform: rotateY(240deg) translateZ(35vw);
+        }
+        @keyframes carousel{
+            0%,
+            17.5%{
+                transform: translateZ(-35vw) rotateY(0);
+            }
+            27.5%,
+            45%{
+                transform: translateZ(-35vw) rotateY(-120deg);
+            }
+            55%,
+            72.5%{
+                transform: translateZ(-35vw) rotateY(-240deg);
+            }
+            82.5%,
+            100%{
+                transform: translateZ(-35vw) rotateY(-360deg);
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #1E3A8A;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="dong-navbar">
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="scenic-spots.html"><i class="fas fa-mountain"></i> 旅游景点</a></li>
+                        <li><a href="dong-culture.html"><i class="fas fa-drum"></i> 侗族文化</a></li>
+                        <li><a href="homestays.html"><i class="fas fa-bed"></i> 特色民宿</a></li>
+                        <li><a href="food.html"><i class="fas fa-utensils"></i> 特色美食</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="nav-decoration"></div>
+            </nav>
+        </header>
+        
+        <div class="content">
+            <h2 class="section-title">特色美食</h2>
+            <div class="shell">
+                <div class="contentt">
+                    <div class="itemm"></div>
+                    <div class="itemm"></div>
+                    <div class="itemm"></div>
+                </div>
+            </div>
+            <div class="food-cards">
+                <div class="food-card" onclick="toggleEnlarge(this)">
+                    <div class="food-card-inner">
+                        <div class="food-card-front">
+                            <i class="fas fa-utensils"></i>
+                            <h3>酸鸭</h3>
+                            <p>酸鸭是侗族的传统美食之一。选用新鲜的鸭子，用糯米酒、盐、辣椒等调料腌制。腌制后的酸鸭，色泽金黄，酸辣可口，具有独特的风味。</p>
+                        </div>
+                        <div class="food-card-back" style="background-image: url('img/酸鸭.png');"></div>
+                    </div>
+                </div>
+                
+                <div class="food-card" onclick="toggleEnlarge(this)">
+                    <div class="food-card-inner">
+                        <div class="food-card-front">
+                            <i class="fas fa-utensils"></i>
+                            <h3>油茶</h3>
+                            <p>油茶是侗族日常生活中必不可少的饮品，也是待客的佳品。将茶叶用油炒香，加入适量的水和生姜等调料煮成茶汤，再加入米花、花生、黄豆等配料。口感浓郁，香气扑鼻。</p>
+                        </div>
+                        <div class="food-card-back" style="background-image: url('img/油茶.png');"></div>
+                    </div>
+                </div>
+                
+                <div class="food-card" onclick="toggleEnlarge(this)">
+                    <div class="food-card-inner">
+                        <div class="food-card-front">
+                            <i class="fas fa-utensils"></i>
+                            <h3>牛瘪火锅</h3>
+                            <p>牛瘪火锅是侗族的特色美食。将牛胃及小肠里未完全消化的内容物拿出来，挤出其中的液体，加入牛胆汁及佐料放入锅内文火慢熬，然后将煮好的液体作为汤底，涮煮各种食材。味道独特，具有一定的药用价值。</p>
+                        </div>
+                        <div class="food-card-back" style="background-image: url('img/18.png');"></div>
+                    </div>
+                </div>
+                
+                <div class="food-card" onclick="toggleEnlarge(this)">
+                    <div class="food-card-inner">
+                        <div class="food-card-front">
+                            <i class="fas fa-utensils"></i>
+                            <h3>糯米糍粑</h3>
+                            <p>糯米糍粑以糯米为主要原料，将糯米蒸熟后，放在石臼里用木槌捶打至软糯状，然后制成圆形或方形的糍粑。可煎、炸、烤，口感软糯，香甜可口。</p>
+                        </div>
+                        <div class="food-card-back" style="background-image: url('img/糍粑.png');"></div>
+                    </div>
+                </div>
+                
+                <div class="food-card" onclick="toggleEnlarge(this)">
+                    <div class="food-card-inner">
+                        <div class="food-card-front">
+                            <i class="fas fa-utensils"></i>
+                            <h3>侗果</h3>
+                            <p>侗果是侗族的传统小吃，用糯米粉、白砂糖、芝麻等原料制作而成。外形呈椭圆状，色泽金黄，香甜酥脆，是侗族人民喜爱的美食之一。</p>
+                        </div>
+                        <div class="food-card-back" style="background-image: url('img/侗果.png');"></div>
+                    </div>
+                </div>
+                
+                <div class="food-card" onclick="toggleEnlarge(this)">
+                    <div class="food-card-inner">
+                        <div class="food-card-front">
+                            <i class="fas fa-utensils"></i>
+                            <h3>烧鱼</h3>
+                            <p>烧鱼是侗族的特色菜肴。将新鲜的鱼用树枝或竹条穿好，放在火上烤制。烤制过程中，涂抹上辣椒、盐、生姜等调料，烤至鱼皮金黄，肉质鲜嫩。味道鲜美，香气四溢。</p>
+                        </div>
+                        <div class="food-card-back" style="background-image: url('img/烤鱼.png');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dong-pattern"></div>
+        
+        <footer>
+            <p>&copy; 2024 三江侗族自治县旅游网站</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 图片放大/缩小效果
+        function toggleEnlarge(card) {
+            const back = card.querySelector('.food-card-back');
+            back.classList.toggle('enlarged');
+            
+            // 关闭其他卡片的放大效果
+            document.querySelectorAll('.food-card').forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.querySelector('.food-card-back').classList.remove('enlarged');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
